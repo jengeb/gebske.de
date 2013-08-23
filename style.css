@@ -10,7 +10,7 @@ body, html{
 .start_gebske{
   width:50%;
   height:100%;
-  background-image:url(foto3.jpg);   
+  background-image:url(garn.jpg);   
   background-size:cover;
   background-repeat:no-repeat;
   float:left;
@@ -19,15 +19,11 @@ body, html{
 .start_pahlke{
   width:50%;
   height:100%;
-  background-image:url(foto2.jpg);  
+  background-image:url(tastatur.jpg);  
   background-size:cover;
   background-repeat:no-repeat;
   float:right;
 }
-
-/*.start_pahlke .contact{
-  background:#cccccc;
-}*/
 
 .contact{
   border:1px solid #000000;
