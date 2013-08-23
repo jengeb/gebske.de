@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <title>Gebske - Textile Flechterei und Schreib- und Sekretariats-Service</title>
   </head>
   
@@ -11,8 +14,27 @@
     <div class="start_gebske">
       <div class="contact">
 	<h3>Textile Flechterei<br>Helmut Gebske</h3>
-	<p>Brucherstr. 53<br>
-	51709 Marienheide</p>
+	<p><a id="address_gebske" href="#">Brucherstr. 53<br>
+	51709 Marienheide</a></p>
+	
+	<div id="map_gebske">
+	</div>
+	
+	<script>
+	  var map = L.map('map_gebske').setView([51.08373, 7.55185], 13);
+	  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+	    maxZoom: 18
+	  }).addTo(map);
+	  var marker = L.marker([51.08373, 7.55185]).addTo(map);
+	  marker.bindPopup("Textile Flechterei<br>Helmut Gebske");
+	  $('#map_gebske').hide();
+	  $('#address_gebske').on('click',function(){
+	    $('#map_gebske').toggle({
+	      });
+	  })
+	</script>
+	
 	<p>Tel.: 0 22 64 / 63 69<br>
 	Fax: 0 22 64 / 38 97<br>   
 	E-Mail: <a href="mailto:helmut-gebske@t-online.de">helmut-gebske@t-online.de</a></p>
@@ -26,8 +48,27 @@
     <div class="start_pahlke">
         <div class="contact">
 	<h3>Schreib- und Sekretariats-Service<br>Edith Pahlke-Gebske</h3>
-	<p>Auf der Vogelruthe 7<br>
-	51709 Marienheide</p>
+	<p><a id="address_pahlke" href="#">Auf der Vogelruthe 7<br>
+	51709 Marienheide</a></p>
+	
+	<div id="map_pahlke">
+	</div>
+	
+	<script>
+	  var map = L.map('map_pahlke').setView([51.070732, 7.580442], 13);
+	  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+	    maxZoom: 18
+	  }).addTo(map);
+	  var marker = L.marker([51.070732, 7.580442]).addTo(map);
+	  marker.bindPopup("Schreib- und Sekretariats-Service<br>Edith Pahlke-Gebske");
+	  $('#map_pahlke').hide();
+	  $('#address_pahlke').on('click',function(){
+	    $('#map_pahlke').toggle({
+	      });
+	  })
+	</script>
+	
 	<p>Tel.: 0 22 64 / 40 130<br>
 	Fax: 0 22 64 / 40 132<br>   
 	E-Mail: <a href="mailto:gebske-marienheide@t-online.de">gebske-marienheide@t-online.de</a></p>
