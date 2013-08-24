@@ -21,17 +21,22 @@
 	</div>
 	
 	<script>
-	  var map = L.map('map_gebske').setView([51.08373, 7.55185], 13);
+	  var pos_gebske = [51.08373, 7.55185]; 
+	  var map_gebske = L.map('map_gebske').setView(pos_gebske, 13);
 	  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	    maxZoom: 18
-	  }).addTo(map);
-	  var marker = L.marker([51.08373, 7.55185]).addTo(map);
-	  marker.bindPopup("Textile Flechterei<br>Helmut Gebske");
+	  }).addTo(map_gebske);
+	  var marker_gebske = L.marker(pos_gebske).addTo(map_gebske);
+	  marker_gebske.bindPopup("Textile Flechterei<br>Helmut Gebske");
 	  $('#map_gebske').hide();
 	  $('#address_gebske').on('click',function(){
 	    $('#map_gebske').toggle({
-	      });
+	      complete:function(){
+		map_gebske.invalidateSize();
+		map_gebske.setView(pos_gebske, 13);
+	      }
+	    });
 	  })
 	</script>
 	
@@ -55,19 +60,25 @@
 	</div>
 	
 	<script>
-	  var map = L.map('map_pahlke').setView([51.070732, 7.580442], 13);
+	  var pos_pahlke = [51.070732, 7.580442]; 
+	  var map_pahlke = L.map('map_pahlke').setView(pos_pahlke, 13);
 	  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	    maxZoom: 18
-	  }).addTo(map);
-	  var marker = L.marker([51.070732, 7.580442]).addTo(map);
-	  marker.bindPopup("Schreib- und Sekretariats-Service<br>Edith Pahlke-Gebske");
+	  }).addTo(map_pahlke);
+	  var marker_pahlke = L.marker(pos_pahlke).addTo(map_pahlke);
+	  marker_pahlke.bindPopup("Schreib- und Sekretariats-Service<br>Edith Pahlke-Gebske");
 	  $('#map_pahlke').hide();
 	  $('#address_pahlke').on('click',function(){
 	    $('#map_pahlke').toggle({
-	      });
+	      complete:function(){
+		map_pahlke.invalidateSize();
+		map_pahlke.setView(pos_pahlke, 13);
+	      }
+	    });
 	  })
 	</script>
+	
 	
 	<p>Tel.: 0 22 64 / 40 130<br>
 	Fax: 0 22 64 / 40 132<br>   
